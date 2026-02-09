@@ -27,7 +27,7 @@ import os
 os.environ["GOOGLE_API_KEY"] = "AIzaSyCQPB1lVL2hOwvEKO_v2Ta_D8tuWs2zllc"
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3-pro-preview",
     temperature=0
 )
 
