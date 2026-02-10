@@ -24,11 +24,14 @@ from langgraph.graph import StateGraph, END
 from langchain_core.messages import HumanMessage
 
 import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCQPB1lVL2hOwvEKO_v2Ta_D8tuWs2zllc"
+from dotenv import load_dotenv, find_dotenv
 
+_ = load_dotenv(find_dotenv())
+api_key = os.getenv("GOOGLE_API_KEY")
 llm = ChatGoogleGenerativeAI(
     model="gemini-3-pro-preview",
-    temperature=0
+    temperature=0,
+    google_api_key=api_key
 )
 
 class QAPair(TypedDict):
